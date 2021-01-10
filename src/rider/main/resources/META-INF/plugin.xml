@@ -1,0 +1,20 @@
+<idea-plugin require-restart="true">
+  <id>RenameRelatedTests-rider</id>
+  <name>RenameRelatedTests</name>
+  <version>_PLACEHOLDER_</version>
+  <vendor url="https://github.com/Socolin/RenameRelatedTests-Rider-Plugin">Bertrand Provost</vendor>
+  <idea-version since-build="_PLACEHOLDER_" until-build="_PLACEHOLDER_" />
+  <depends>com.intellij.modules.rider</depends>
+
+  <description>
+<![CDATA[
+<p>Extend renaming refactor to also rename tests classes and method</p>
+]]>
+  </description>
+  <change-notes>
+<![CDATA[
+<p>Initial version</p>
+]]>
+  </change-notes>
+
+</idea-plugin>

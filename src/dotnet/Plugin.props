@@ -1,0 +1,16 @@
+<Project>
+  <PropertyGroup>
+    <SdkVersion>2020.3.2</SdkVersion>
+
+    <Title>RenameRelatedTests</Title>
+    <Description>Description</Description>
+
+    <Authors>Author</Authors>
+    <Copyright>Copyright $([System.DateTime]::Now.Year) Maintainers of RenameRelatedTests</Copyright>
+    <PackageTags>resharper plugin</PackageTags>
+
+    <PackageProjectUrl>https://github.com/Socolin/RenameRelatedTests-Rider-Plugin</PackageProjectUrl>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/Socolin/RenameRelatedTests-Rider-Plugin/master/LICENSE</PackageLicenseUrl>
+    <PackageIconUrl></PackageIconUrl>
+  </PropertyGroup>
+</Project>
