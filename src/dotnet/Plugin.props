@@ -3,9 +3,9 @@
     <SdkVersion>2020.3.2</SdkVersion>
 
     <Title>RenameRelatedTests</Title>
-    <Description>Description</Description>
+    <Description>Extend renaming refactor to also rename tests classes and method</Description>
 
-    <Authors>Author</Authors>
+    <Authors>Bertrand Provost</Authors>
     <Copyright>Copyright $([System.DateTime]::Now.Year) Maintainers of RenameRelatedTests</Copyright>
     <PackageTags>resharper plugin</PackageTags>
 
