@@ -160,3 +160,8 @@ prepareSandbox {
         })
     }
 }
+
+publishPlugin {
+    token intellijPublishToken
+}
+
