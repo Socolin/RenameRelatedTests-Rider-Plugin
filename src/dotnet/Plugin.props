@@ -1,6 +1,6 @@
 <Project>
   <PropertyGroup>
-    <SdkVersion>2022.2.0</SdkVersion>
+    <SdkVersion>2022.3.0-eap08</SdkVersion>
 
     <Title>RenameRelatedTests</Title>
     <Description>Extend renaming refactor to also rename tests classes and method</Description>
