@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using JetBrains.Application.Progress;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CSharp.Tree;
 using JetBrains.ReSharper.Psi.Resolve;
@@ -13,12 +14,12 @@ namespace ReSharperPlugin.RenameRelatedTests.DerivedRenameEvaluator
     {
         public bool SuggestedElementsHaveDerivedName => true;
 
-        public IEnumerable<IDeclaredElement> CreateFromElement(IEnumerable<IDeclaredElement> initialElement, DerivedElement derivedElement)
+        public IEnumerable<IDeclaredElement> CreateFromElement(IEnumerable<IDeclaredElement> initialElements, DerivedElement derivedElement, IProgressIndicator pi)
         {
             return Array.Empty<IDeclaredElement>();
         }
 
-        public IEnumerable<IDeclaredElement> CreateFromReference(IReference reference, IDeclaredElement declaredElement)
+        public IEnumerable<IDeclaredElement> CreateFromReference(IReference reference, IDeclaredElement declaredElement, IProgressIndicator pi)
         {
             if (!(reference.GetTreeNode() is ICSharpTreeNode cSharpTreeNode))
                 return Array.Empty<IDeclaredElement>();
@@ -30,6 +31,7 @@ namespace ReSharperPlugin.RenameRelatedTests.DerivedRenameEvaluator
                 return new[] {containingFunction.DeclaredElement};
             if (MatchName(declaredElement.ShortName.Replace("Async", ""), containingFunction.DeclaredName))
                 return new[] {containingFunction.DeclaredElement};
+
 
             return Array.Empty<IDeclaredElement>();
         }
