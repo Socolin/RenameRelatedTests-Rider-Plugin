@@ -12,5 +12,6 @@
     <PackageProjectUrl>https://github.com/Socolin/RenameRelatedTests-Rider-Plugin</PackageProjectUrl>
     <PackageLicenseUrl>https://raw.githubusercontent.com/Socolin/RenameRelatedTests-Rider-Plugin/master/LICENSE</PackageLicenseUrl>
     <PackageIconUrl></PackageIconUrl>
+    <LangVersion>12</LangVersion>
   </PropertyGroup>
 </Project>

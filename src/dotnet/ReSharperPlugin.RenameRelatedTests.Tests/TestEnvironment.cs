@@ -7,15 +7,14 @@ using NUnit.Framework;
 
 [assembly: Apartment(ApartmentState.STA)]
 
-namespace ReSharperPlugin.RenameRelatedTests.Tests
-{
-  [ZoneDefinition]
-  public interface IRenameRelatedTestsTestZone : ITestsEnvZone, IRequire<PsiFeatureTestZone>
-  {
-  }
+namespace ReSharperPlugin.RenameRelatedTests.Tests;
 
-  [SetUpFixture]
-  public class TestEnvironment : ExtensionTestEnvironmentAssembly<IRenameRelatedTestsTestZone>
-  {
-  }
+[ZoneDefinition]
+public interface IRenameRelatedTestsTestZone : ITestsEnvZone, IRequire<PsiFeatureTestZone>
+{
+}
+
+[SetUpFixture]
+public class TestEnvironment : ExtensionTestEnvironmentAssembly<IRenameRelatedTestsTestZone>
+{
 }

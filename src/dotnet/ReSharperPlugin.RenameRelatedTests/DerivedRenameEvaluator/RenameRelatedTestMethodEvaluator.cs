@@ -7,20 +7,20 @@ using JetBrains.ReSharper.Psi.CSharp.Tree;
 using JetBrains.ReSharper.Psi.Resolve;
 using JetBrains.ReSharper.Refactorings.Rename;
 
-namespace ReSharperPlugin.RenameRelatedTests.DerivedRenameEvaluator
-{
-    [DerivedRenamesEvaluator]
-    public class RenameRelatedTestMethodEvaluator : IDerivedRenamesEvaluator
-    {
-        public bool SuggestedElementsHaveDerivedName => true;
+namespace ReSharperPlugin.RenameRelatedTests.DerivedRenameEvaluator;
 
-        public IEnumerable<IDeclaredElement> CreateFromElement(IEnumerable<IDeclaredElement> initialElements, DerivedElement derivedElement, IProgressIndicator pi)
-        {
+[DerivedRenamesEvaluator]
+public class RenameRelatedTestMethodEvaluator : IDerivedRenamesEvaluator
+{
+    public bool SuggestedElementsHaveDerivedName => true;
+
+    public IEnumerable<IDeclaredElement> CreateFromElement(IEnumerable<IDeclaredElement> initialElements, DerivedElement derivedElement, IProgressIndicator pi)
+    {
             return Array.Empty<IDeclaredElement>();
         }
 
-        public IEnumerable<IDeclaredElement> CreateFromReference(IReference reference, IDeclaredElement declaredElement, IProgressIndicator pi)
-        {
+    public IEnumerable<IDeclaredElement> CreateFromReference(IReference reference, IDeclaredElement declaredElement, IProgressIndicator pi)
+    {
             if (!(reference.GetTreeNode() is ICSharpTreeNode cSharpTreeNode))
                 return Array.Empty<IDeclaredElement>();
             var containingFunction = cSharpTreeNode.GetContainingFunctionDeclarationIgnoringClosures();
@@ -36,8 +36,8 @@ namespace ReSharperPlugin.RenameRelatedTests.DerivedRenameEvaluator
             return Array.Empty<IDeclaredElement>();
         }
 
-        private bool MatchName(string renamedElementName, string candidateName)
-        {
+    private bool MatchName(string renamedElementName, string candidateName)
+    {
             var tokenizedRenamed = TextUtil.TokenizeKeepCase(renamedElementName);
             var tokenizedCandidate = TextUtil.TokenizeKeepCase(candidateName);
 
@@ -52,5 +52,4 @@ namespace ReSharperPlugin.RenameRelatedTests.DerivedRenameEvaluator
 
             return false;
         }
-    }
 }
