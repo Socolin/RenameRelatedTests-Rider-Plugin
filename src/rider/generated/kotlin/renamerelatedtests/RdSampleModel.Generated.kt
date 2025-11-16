@@ -16,7 +16,7 @@ import kotlin.jvm.JvmStatic
 
 
 /**
- * #### Generated from [RdSampleModel.kt:11]
+ * #### Generated from [RdSampleModel.kt:10]
  */
 class RdSampleModel private constructor(
     private val _myCall: RdCall<RdCallRequest, RdCallResponse>

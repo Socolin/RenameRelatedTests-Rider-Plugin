@@ -16,7 +16,7 @@ public class TextUtil
 			if (c.IsLetterFast() && c.IsUpperFast())
 				AddToken(tokens, sb);
 
-			if (c == '-' || c == '_')
+			if (c is '-' or '_')
 				AddToken(tokens, sb);
 
 			if (c.IsLetterFast())

@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using JetBrains.Application.Progress;
 using JetBrains.ReSharper.Psi;
@@ -15,17 +14,17 @@ public class RenameRelatedTestEvaluator : IDerivedRenamesEvaluator
 
     public IEnumerable<IDeclaredElement> CreateFromElement(IEnumerable<IDeclaredElement> initialElements, DerivedElement derivedElement, IProgressIndicator pi)
     {
-        return Array.Empty<IDeclaredElement>();
+        return [];
     }
 
     public IEnumerable<IDeclaredElement> CreateFromReference(IReference reference, IDeclaredElement declaredElement, IProgressIndicator pi)
     {
-        if (!(reference.GetTreeNode() is ICSharpTreeNode cSharpTreeNode))
-            return Array.Empty<IDeclaredElement>();
-        if (!(cSharpTreeNode.GetContainingTypeDeclaration() is IClassDeclaration classDeclaration))
-            return Array.Empty<IDeclaredElement>();
+        if (reference.GetTreeNode() is not ICSharpTreeNode cSharpTreeNode)
+            return [];
+        if (cSharpTreeNode.GetContainingTypeDeclaration() is not IClassDeclaration classDeclaration)
+            return [];
         if (classDeclaration.DeclaredName != declaredElement.ShortName + "Tests")
-            return Array.Empty<IDeclaredElement>();
-        return new[] {classDeclaration.DeclaredElement};
+            return [];
+        return [classDeclaration.DeclaredElement];
     }
 }
